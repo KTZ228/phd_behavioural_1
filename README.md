@@ -10,6 +10,7 @@ Only needs to be checked for some dependencies that we use for the virtual envir
 
 #### Python
 Check which python version is installed (should be at least 3.8 for PsychoPy):
+
 `python --version`
 
 If a newer version of Python needs to be installed:
@@ -21,23 +22,27 @@ If a newer version of Python needs to be installed:
 Aside from needing pip for the use of pipenv, pip also makes installing dependencies a lot easier in the future.
 
 Try this to see if (and what version of) pip is installed:
+
 `pip --version`
 
 If pip is not installed:
+
 `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`
 
 `python get-pip.py`
 
 #### Pipenv
 Try this to see if (and what version of) pipenv is installed:
+
 `pipenv -h`
 
 If not, you install it by typing the following (this is where pip comes in).
+
 `pip install pipenv`
 
 Define python paths for pipenv (test if this is necessary):
 ```
-c:\Users\<username>\AppData\Roaming\Python\Python38\Site-Packages
+C:\Users\<username>\AppData\Roaming\Python\Python38\Site-Packages
 C:\Users\<username>\AppData\Roaming\Python\Python38\Scripts
 ```
 
