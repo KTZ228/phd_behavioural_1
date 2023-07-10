@@ -5,10 +5,7 @@
 Since Python is sensitive to dependencies unexpectedly interacting with each other when one of them is updated, it is important to ensure that every member of the project is working with the same versions of each dependency.
 It is good practice to do this by creating a virtual environment for each separate project, which we do using `pipenv`.
 
-### Check version number
-Only needs to be checked for some dependencies that we use for the virtual environment.
-
-#### Python
+### Python
 Check which python version is installed (should be at least 3.8 for PsychoPy):
 
 `python --version`
@@ -18,7 +15,7 @@ If a newer version of Python needs to be installed:
 - Install a newer stable version
 * When installing, make sure to add python to the path so that you can easily execute python commands using the command window.
 
-#### Pip
+### Pip
 Aside from needing pip for the use of pipenv, pip also makes installing dependencies a lot easier in the future.
 
 Try this to see if (and what version of) pip is installed:
@@ -31,7 +28,7 @@ If pip is not installed:
 
 `python get-pip.py`
 
-#### Pipenv
+### Pipenv
 Try this to see if (and what version of) pipenv is installed:
 
 `pipenv -h`
