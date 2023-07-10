@@ -25,6 +25,7 @@ Try this to see if (and what version of) pip is installed:
 
 If pip is not installed:
 `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py`
+
 `python get-pip.py`
 
 #### Pipenv
