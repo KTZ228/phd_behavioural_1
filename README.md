@@ -1,1 +1,2 @@
-# phd_behavioural_1
+# PhD study 1
+## Behavioural experiment code
