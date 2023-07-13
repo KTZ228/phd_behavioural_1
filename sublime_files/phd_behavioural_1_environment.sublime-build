@@ -1,0 +1,4 @@
+{
+	"cmd": ["C:\\Program Files\\PsychoPy\\python.exe", "-u", "$file"],
+	"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)"
+}

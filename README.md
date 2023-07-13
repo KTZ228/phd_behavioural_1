@@ -10,7 +10,7 @@ Check which python version is installed (should be at least 3.8 for PsychoPy):
 
 `python --version`
 
-If a newer version of Python needs to be installed:
+If a newer version of Python needs to be installed, go to:
 - Go to python.com/downloads
 - Install a newer stable version
 * When installing, make sure to add python to the path so that you can easily execute python commands using the command window.
@@ -43,8 +43,21 @@ C:\Users\<username>\AppData\Roaming\Python\Python38\Site-Packages
 C:\Users\<username>\AppData\Roaming\Python\Python38\Scripts
 ```
 
+## If installed python version is too high
+This shouldn't be an issue, you just need to specify which python version you want to use in your pip file.
+
+Add or change the following variable in your pipfile:
+
+`python_version = "3.8"`
+
+If the virtual environment was already created, you can reinstall it with the updated settings from your pipfile by typing the following into the commandline:
+
+`pipenv install --python=/path/to/your/python`
+
 ## Open the project and install the virtual environment
 Since this is an existing project, you will have to install the dependencies described in the `Pipfile`.
 This is done by specifying the path to the pipfile and the IDE will download the correct version of every dependency automatically.
 
 When a warning saying 'no python interpreter configured' is displayed, the pipfile was not read correctly and you should try specifying it manually.
+
+`pipenv install --python=/path/to/your/python`
