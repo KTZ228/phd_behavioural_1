@@ -16,6 +16,9 @@ If you have any suggestions on how to improve the coding style (of which there a
     - Put the type of variable at the end of a variable name.
         - Something like `isppa_map_mni_3D_matrix`.
 
+## Issues
+- If you find an issue, don't just work around it but either try to improve it so that it becomes more error prone or ask me (Kenneth) to do so.
+
 ## Matlab
 - Whenever building a function, ensure that the input arguments are checked. Like this:
 ```
