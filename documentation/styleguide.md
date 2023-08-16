@@ -42,3 +42,40 @@ When calling this function, normal input arguments are fed in order while option
 ```
 convert_final_to_MNI_simnibs(path_to_input_img, m2m_folder, path_to_output_img, parameters, 'interpolation_order', 0)
 ```
+
+## Python
+- Similarly to Matlab, you would assign each separate action to its own function.
+  - Unlike matlab, a single file can contain multiple functions. The main function and 'helper' functions that should only be used in that script
+  - If you need to use these 'helper' functions more often, turn it into a separate main function.
+
+### Building a function
+- Some additional parameters need to be added to ensure that the function is not run when importing it.
+- This is done by defining the main function in a script.
+
+#### Example
+Below, a function is shown that accepts two input variables and prints them to the console.
+```python
+def print_session_info(subject_id, session_number):
+    print(subject_id)
+    print(session_number)
+```
+But when you want to import it using `from experiment import print_session_info`, python complains about 'missing 2 required positional arguments'. This is caused by python trying to run the script on import. So we want to differentiate between importing and running a script.
+
+The way to solve this is by adding extra components to your script.
+Below, we have changed the function name to `main`. This, in combination with the block at the bottom, can help python differentiate between importing and running the script.
+What basically happens here is that the script checks if the name of the script and the '__main__' handle are equal. Since this is only true if the script is run but not if it is imported, `main()` will subsequently only be called when running this script explicitly.
+```python
+def main(subject_id, session_number):
+    print(subject_id)
+    print(session_number)
+
+if __name__ == '__main__':
+    main()
+```
+Now, the script can be run using:
+```python
+from experiment import print_session_info
+print_session_info.main(subject_id, session_number)
+```
+
+### Checking your input
