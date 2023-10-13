@@ -1,48 +1,33 @@
 import argparse
-import textwrap
 import sys
 
-def parseArguments(argv):
+def parse_args():
 
-    usage_text = textwrap.dedent('''
+    parser = argparse.ArgumentParser(description = 'Checking whether input consists of integers and is within reasonable range.')
 
-This is a test.
-    Subject_ID accepts an integer.
-    Session_number accepts an integer.
-    
-    ''')
+    parser.add_argument('--subject_id', type = int, choices = range(0, 99), nargs = '?', help = '''Subject ID. This should be an integer between 0 and 99.''')
+    parser.add_argument('--session_number', type = int, choices = range(0, 9), nargs = '?', help = '''Session number. This should be an integer between 0 and 9.''')
 
-    parser = argparse.ArgumentParser(
-        prog="behavioural_experiment",usage=usage_text)
+    args = parser.parse_args()
 
-    parser.add_argument('--subject_id', type=int, nargs='?', help='''Subject ID. This is necessary to run the experiment.''')
-    parser.add_argument('--session_number', type=int, nargs='?', help='''Session number. This is required to run the experiment.''')
-
-    args=parser.parse_args(argv)
-
-    if args.subject_id is None:
+    if args.subject_id is None or args.session_number is None:
         parser.print_help()
     exit()
 
     return args
 
-def main():
-    args = parseArguments(sys.argv[1:])
 
-    if not (isinstance(subject_id, int)):
-        print('\nsubject_id has to be an integer')
-        return
-    else:
-        subject_string = f'sub-{subject_id:003}'
-        print(subject_string)
+def test_function(subject_id, session_number):
 
-    if not (isinstance(session_number, int)):
-        print('\nsession_number has to be an integer')
-        return
-    else:
-        session_string = f'session-{session_number:02}'
-        print(session_string)
+    inputs = parse_args(subject_id, session_number)
+
+    subject_string = f'sub-{subject_id:003}'
+    print(subject_string)
+
+    session_string = f'session-{session_number:02}'
+    print(session_string)
+    print('__main__')
 
 
 if __name__ == '__main__':
-    main()
+    test_function()
