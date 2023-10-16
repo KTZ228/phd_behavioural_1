@@ -1,9 +1,9 @@
 import argparse
 import sys
 
-def parse_args():
+def parse_args(subject_id, session_number):
 
-    parser = argparse.ArgumentParser(description = 'Checking whether input consists of integers and is within reasonable range.')
+    parser = argparse.ArgumentParser(description = 'Checking whether input consists of integers within reasonable range.')
 
     parser.add_argument('--subject_id', type = int, choices = range(0, 99), nargs = '?', help = '''Subject ID. This should be an integer between 0 and 99.''')
     parser.add_argument('--session_number', type = int, choices = range(0, 9), nargs = '?', help = '''Session number. This should be an integer between 0 and 9.''')
@@ -17,7 +17,7 @@ def parse_args():
     return args
 
 
-def test_function(subject_id, session_number):
+def main(subject_id, session_number):
 
     inputs = parse_args(subject_id, session_number)
 
@@ -30,4 +30,4 @@ def test_function(subject_id, session_number):
 
 
 if __name__ == '__main__':
-    test_function()
+    main()
