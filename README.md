@@ -37,6 +37,19 @@ Let's say the used Python version is 3.8.18.
 We will install it using the command: `pyenv install 3.8.18`
 To see what python versions are installed in pyenv you can type: `pyenv versions`
 
+#### Activate pyenv on startup of new terminal
+Type the following into the terminal for further instructions:
+`pyenv init`
+It probably warns you to copy something akin to the following code block into the '.zprofile' file:
+```
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+```
+You can find this file in the home directory (unhide using command + shift + period).
+Simply add the set of commands to the end of it and save the file.
+Any new terminal window should now be able to load the correct local and global python versions.
+
 #### Set a global python environment
 If you haven't installed python before you will need to set one as the system default.
 This can be done using: `pyenv global 3.8.18`
